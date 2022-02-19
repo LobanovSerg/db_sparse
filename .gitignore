@@ -1,0 +1,6 @@
+*.txt
+.mypy_cache
+env
+temp*
+__pycache__
+test
