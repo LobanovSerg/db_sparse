@@ -1,11 +1,12 @@
-from requests import get
 from data_parser.processing import DataProcessing as dp
 
 
 def main():
-    url = ('http://localhost:21122/monitoring/infrastructure/using/summary/1')
-    info = get(url)
-    parsing_data = dp(info.text)
+
+    db_creds = {'database': 'postgres', 'user': 'postgres',
+                'password': 'q1w2e3', 'host': 'localhost', 'port': 5432}
+
+    parsing_data = dp(db_creds)
     parsing_data.textfile()
 
 

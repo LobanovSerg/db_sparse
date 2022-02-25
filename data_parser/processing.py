@@ -13,7 +13,7 @@ class DataProcessing(Parser):
             resource_name, metric, *other = unit
             data_dict.setdefault(resource_name, {})
             (data_dict[resource_name].setdefault(metric, [])
-             .append(int(other[-1])))
+             .append(float(other[-1])))
 
         for resource in data_dict:
             data_dict[resource] = (DataProcessing.
